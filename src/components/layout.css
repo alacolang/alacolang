@@ -1,14 +1,28 @@
+@font-face {
+  font-family: "Yekan";
+  src: url("../fonts/IRANYekanRDMobile.ttf");
+}
+
 html {
-  font-family: sans-serif;
+  font-family: "Yekan", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  text-align: right;
 }
-article,
+
+.instagram * {
+  direction: ltr;
+  text-align: center;
+}
+
+/* article,
 aside,
 details,
 figcaption,
@@ -61,8 +75,10 @@ dfn {
   font-style: italic;
 }
 h1 {
+  font-family: "Yekan", sans-serif;
   font-size: 2em;
   margin: 0.67em 0;
+  text-align: right;
 }
 mark {
   background-color: #ff0;
@@ -619,4 +635,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} */
