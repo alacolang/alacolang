@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `الاکنگ: اختلال دوقطبی در نوجوانان`,
-    description: `در این سایت با بالا و پایین های اختلال دوقطبی در نوجوانان آشنا خواهید شد`,
+    description: `در الاکلنگ با بالا و پایین های اختلال دوقطبی در نوجوانان آشنا خواهید شد`,
     author: `@parisa.pedram`,
   },
   plugins: [
@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: `${__dirname}/src/pages`
+        name: "contents",
+        path: `${__dirname}/src/contents`
       }
     },
     `gatsby-transformer-sharp`,
@@ -31,7 +31,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-32x32.png`,
       },
     },
     {
