@@ -2,10 +2,9 @@ import React from "react"
 import Helmet from "react-helmet"
 import { Link, graphql } from "gatsby"
 import get from "lodash/get"
-
-// import Bio from "../components/Bio"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
-// import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,24 +16,29 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet
-          htmlAttributes={{ lang: "en" }}
+          htmlAttributes={{ lang: "fa" }}
           meta={[{ name: "description", content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <div
-          className="instagram"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <Row>
+          <Col>
+            <h1>{post.frontmatter.title}</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div
+              className="instagram"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </Col>
+        </Row>
         <hr
-          style={
-            {
-              // marginBottom: rhythm(1),
-            }
-          }
+          style={{
+            // marginBottom: rhythm(1),
+            marginBottom: 15,
+          }}
         />
-        {/* <Bio /> */}
-
         <ul
           style={{
             display: "flex",
