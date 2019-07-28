@@ -4,8 +4,7 @@ import SEO from "../components/seo"
 import Home from "../components/home"
 
 // <SEO title="Home" />
-const IndexPage = ({ data }) =>
-  console.log("data=", data) || <Home data={data} />
+const IndexPage = ({ data }) => <Home data={data} />
 
 export const query = graphql`
   query home {
@@ -20,7 +19,7 @@ export const query = graphql`
           id
           name
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
             }
           }

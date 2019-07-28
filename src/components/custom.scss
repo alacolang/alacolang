@@ -1,9 +1,18 @@
 // Your variable overrides
 // $body-bg: #000;
 // $body-color: #111;
-$blue: #A08B92;
+$blue: #a08b92;
 
-$font-family-base: "Yekan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base: "Yekan", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$nav-tabs-link-active-color: #6c757d;
+
+.navbar-nav .nav-item {
+  margin-right: 1rem;
+  margin-left: inherit;
+}
 
 // Bootstrap and its default variables
-@import "node_modules/bootstrap-v4-rtl/scss/bootstrap-rtl"
+@import "node_modules/bootstrap-v4-rtl/scss/bootstrap-rtl";

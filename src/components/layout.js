@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import NavDropdown from "react-bootstrap/NavDropdown"
 import Img from "gatsby-image"
-// import "bootstrap-v4-rtl/dist/css/bootstrap-rtl.min.css"
+import Colors from "./colors"
 import "./custom.scss"
 import "./layout.css"
 
@@ -18,7 +18,9 @@ const sections = [
     title: "نوجوانان",
   },
   { tag: "family", title: "خانواده و دوستان" },
-  // { tag: "intervension", title: "مداخله در بحران" },
+  { tag: "intervension", title: "مداخله در بحران" },
+  { tag: "resources", title: "منابع مفید" },
+  { tag: "mood-tracking", title: "پایش خلق" },
 ]
 
 const Layout = ({ children }) => {
@@ -31,7 +33,21 @@ const Layout = ({ children }) => {
           author
         }
       }
-      logo: file(relativePath: { regex: "/.*favicon.*/" }) {
+      logo: file(relativePath: { regex: "/.*favicon-apple.*/" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedin: file(relativePath: { eq: "linkedin.png" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      instagram: file(relativePath: { eq: "instagram.png" }) {
         childImageSharp {
           fixed {
             ...GatsbyImageSharpFixed
@@ -57,13 +73,14 @@ const Layout = ({ children }) => {
 
   return (
     <div className="rtl">
+      {/* <Colors /> */}
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" className="d-flex align-items-center">
           <Img
             fixed={data.logo.childImageSharp.fixed}
-            className="d-inline-block align-top round"
+            className="d-inline-block align-top round logo"
           />
-          <span style={{ paddingRight: 7 }}>الاکنگ</span>
+          <span className="text-primary font-weight-bold">الاکنگ</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -80,7 +97,9 @@ const Layout = ({ children }) => {
                   )
                   .map(({ node }) => (
                     <NavDropdown.Item key={node.id} href={node.fields.slug}>
-                      {node.frontmatter.title}
+                      <span className="text-secondary">
+                        {node.frontmatter.title}
+                      </span>
                     </NavDropdown.Item>
                   ))}
               </NavDropdown>
@@ -90,10 +109,34 @@ const Layout = ({ children }) => {
       </Navbar>
       <main>{children}</main>
 
-      <Container as="footer">
+      <Container fluid as="footer">
         <Row>
-          <Col>
-            <span className="text-muted">{data.site.siteMetadata.author}</span>
+          <Col md={{ span: 10, offset: 1 }}>
+            <Row className="align-items-center">
+              <Col md={{ span: "auto" }}>
+                <span className="text-muted">درباره ما</span>
+              </Col>
+              <Col md={{ span: "auto" }}>
+                <span className="text-muted">ارتباط با ما</span>
+              </Col>
+              <Col md={{ span: "auto" }}>
+                <span className="text-muted">باز نشر مطالب آزاد است.</span>
+              </Col>
+              <Col className="d-flex justify-content-end align-items-center">
+                <a href="https://instagram.com/parisa.pedraam/">
+                  <Img
+                    fixed={data.instagram.childImageSharp.fixed}
+                    className="d-inline-block align-top "
+                  />
+                </a>
+                <a href="https://www.linkedin.com/in/parisa-pedram">
+                  <Img
+                    fixed={data.linkedin.childImageSharp.fixed}
+                    className="d-inline-block align-top "
+                  />
+                </a>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

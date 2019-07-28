@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { Link, graphql } from "gatsby"
 import get from "lodash/get"
+import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
@@ -11,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, "data.site.siteMetadata.title")
     const siteDescription = post.excerpt
-    const { previous, next } = this.props.pageContext
+    // const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location}>
@@ -20,20 +21,24 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: "description", content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Row>
-          <Col>
-            <h1>{post.frontmatter.title}</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div
-              className="instagram"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
-          </Col>
-        </Row>
-        <hr
+        <Container className="post">
+          <Row>
+            <Col>
+              <h4 className="text-center text-primary">
+                {post.frontmatter.title}
+              </h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="d-flex justify-content-center">
+              <div
+                className="instagram"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+            </Col>
+          </Row>
+        </Container>
+        {/* <hr
           style={{
             // marginBottom: rhythm(1),
             marginBottom: 15,
@@ -62,7 +67,7 @@ class BlogPostTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </ul>
+        </ul> */}
       </Layout>
     )
   }

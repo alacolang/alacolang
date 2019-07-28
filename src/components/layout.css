@@ -26,14 +26,74 @@ footer {
   padding: 30px 0;
 }
 
+.logo {
+  max-width: 45px;
+  max-height: 45px;
+}
+
 .round {
   border-radius: 500rem;
 }
 
 .jumbotron {
-  height: 70vh;
+  height: 80vh;
+  background-color: #ffffff;
+}
+
+.jumbotron h2 {
+  margin-top: 70px;
+  line-height: 2;
+}
+
+.home-seesaw {
+  max-width: 90vw;
 }
 
 .content-image {
-  max-width: 400px;
+  /* max-height: 300px; */
+}
+
+.story-section {
+  /* border: 1px solid red; */
+  min-height: 100vh;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.story-section p {
+  font-size: 21px;
+}
+
+.navbar {
+  background-color: #e7ffef !important;
+  /* height: 80px; */
+}
+
+.navbar-brand span {
+  padding-right: 20px;
+  padding-left: 25px;
+  margin-bottom: 0px;
+}
+
+.dropdown-menu {
+  background-color: #D0D7CF;
+}
+
+footer {
+  background-color: #D0D7CF;
+}
+
+footer img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+
+.post {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.media {
+  border: 1px solid red;
 }
