@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `الاکنگ: اختلال دوقطبی در نوجوانان`,
-    description: `در الاکلنگ با بالا و پایین های اختلال دوقطبی در نوجوانان آشنا خواهید شد`,
-    author: `@parisa.pedram`,
+    description: `در الاکلنگ با بالا و پایین‌های اختلال دوقطبی در نوجوانان آشنا خواهید شد.`,
+    author: `‍‍ پریسا پدرام، دکترای روان‌شناسی`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -18,8 +18,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "contents",
-        path: `${__dirname}/src/contents`
-      }
+        path: `${__dirname}/src/contents`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
