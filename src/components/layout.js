@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
   return (
     <div className="rtl">
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <Img
             fixed={data.logo.childImageSharp.fixed}
             className="d-inline-block align-top round"
