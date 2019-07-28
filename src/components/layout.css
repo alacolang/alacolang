@@ -33,3 +33,7 @@ footer {
 .jumbotron {
   height: 70vh;
 }
+
+.content-image {
+  max-width: 400px;
+}
