@@ -24,15 +24,15 @@ class BlogPostTemplate extends React.Component {
         <Container className="post">
           <Row>
             <Col>
-              <h4 className="text-center text-primary">
+              <h4 className="post-title text-center text-primary">
                 {post.frontmatter.title}
               </h4>
             </Col>
           </Row>
           <Row>
-            <Col className="d-flex justify-content-center">
+            <Col md={{ span: 8, offset: 2 }}>
               <div
-                className="instagram"
+                className="post-md"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
             </Col>

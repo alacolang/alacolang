@@ -39,12 +39,16 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // {
-          //   resolve: `gatsby-remark-images`,
-          //   options: {
-          //     maxWidth: 590,
-          //   },
-          // },
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: "md-figure" },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
           {
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
