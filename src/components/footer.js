@@ -42,7 +42,7 @@ const Footer = () => {
               <span className="text-muted">باز نشر مطالب آزاد است.</span>
             </Col>
             <Col className="d-flex justify-content-end align-items-center">
-              <a href="https://instagram.com/parisa.pedraam/">
+              <a href="https://www.instagram.com/alacolang/">
                 <Img
                   fixed={data.instagram.childImageSharp.fixed}
                   className="d-inline-block align-top "
