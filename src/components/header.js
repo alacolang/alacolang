@@ -34,7 +34,6 @@ const Header = () => {
           }
         }
       }
-
       posts: allMarkdownRemark {
         edges {
           node {
@@ -44,6 +43,7 @@ const Header = () => {
             }
             frontmatter {
               title
+              shortTitle
               tags
               order
             }
@@ -80,7 +80,7 @@ const Header = () => {
                 .map(node => (
                   <NavDropdown.Item key={node.id} href={node.fields.slug}>
                     <span className="text-secondary">
-                      {node.frontmatter.title}
+                      {node.frontmatter.shortTitle || node.frontmatter.title}
                     </span>
                   </NavDropdown.Item>
                 ))}

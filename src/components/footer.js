@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -31,7 +31,9 @@ const Footer = () => {
         <Col md={{ span: 10, offset: 1 }}>
           <Row className="align-items-center">
             <Col md={{ span: "auto" }}>
-              <span className="text-muted">درباره ما</span>
+              <Link to="/about-us">
+                <span className="text-muted">درباره ما</span>
+              </Link>
             </Col>
             <Col md={{ span: "auto" }}>
               <span className="text-muted">ارتباط با ما</span>
