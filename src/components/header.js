@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 const sections = [
   { tag: "self", title: "نوجوانان" },
   { tag: "family", title: "خانواده و دوستان" },
-  { tag: "intervension", title: "مداخله در بحران" },
+  { tag: "intervention", title: "مداخله در بحران" },
   { tag: "resources", title: "منابع مفید" },
   { tag: "mood-tracking", title: "پایش خلق" },
 ]
