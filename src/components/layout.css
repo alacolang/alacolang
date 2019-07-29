@@ -108,3 +108,21 @@ footer img {
   direction: ltr;
   margin: 0 auto !important;
 }
+
+.post blockquote {
+  margin: 15px auto;
+  padding: 1em;
+  border-right: 5px solid #999;
+  background-color: #f8f8f8;
+}
+.post blockquote:before {
+  display: none;
+}
+.post blockquote:not(:first-of-type) {
+  margin-top: .5em;
+}
+.post blockquote p {
+  color: #555;
+  font-size: 12pt;
+  line-height: 1.4;
+}
