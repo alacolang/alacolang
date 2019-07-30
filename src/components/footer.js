@@ -36,7 +36,9 @@ const Footer = () => {
               </Link>
             </Col>
             <Col md={{ span: "auto" }}>
-              <span className="text-muted">ارتباط با ما</span>
+              <Link to="/contact-us">
+                <span className="text-muted">ارتباط با ما</span>
+              </Link>
             </Col>
             <Col md={{ span: "auto" }}>
               <span className="text-muted">باز نشر مطالب آزاد است.</span>
