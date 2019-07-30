@@ -3,8 +3,12 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Home from "../components/home"
 
-// <SEO title="Home" />
-const IndexPage = ({ data }) => <Home data={data} />
+const IndexPage = ({ data }) => (
+  <>
+    <SEO title="الاکلنگ" />
+    <Home data={data} />
+  </>
+)
 
 export const query = graphql`
   query home {
