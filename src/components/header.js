@@ -60,7 +60,7 @@ const Header = () => {
           fixed={data.logo.childImageSharp.fixed}
           className="d-inline-block align-top round logo"
         />
-        <span className="text-primary font-weight-bold">الاکنگ</span>
+        <span className="text-primary font-weight-bold">الاکلنگ</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
