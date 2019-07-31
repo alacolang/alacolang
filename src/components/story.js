@@ -192,7 +192,7 @@ const Story = ({ images }) => (
           "align-items-center",
           "story-section",
           {
-            "flex-row-reverse": index % 2 === 1,
+            "flex-row-reverse": index % 2 === 0,
           }
         )}
         style={{ backgroundColor: index % 2 === 0 ? "#e7ffef" : "#ffffff" }}
