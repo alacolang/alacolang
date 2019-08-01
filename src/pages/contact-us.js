@@ -19,46 +19,49 @@ const Contact = ({ data }) => (
           <Col md={{ span: 6, offset: 3 }}>
             <Img
               className="books-image"
-              fluid={
-                data.image.childImageSharp.fluid
-              }
+              fluid={data.image.childImageSharp.fluid}
             />
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col  md={{span: 6, offset: 3}}>
             <p className="text-secondary">
               شما می توانید از طریق فرم زیر با ما در ارتباط باشید. پیامتان را
               بگذارید و من در اسرع وقت به شما پاسخ خواهم داد. در ضمن شما می
-              توانید از طریق
-              {" "}
+              توانید از طریق{" "}
               <a href="https://www.instagram.com/alacolang/">
                 صفحه اینستاگرام الاکلنگ
-              </a>
-              {" "}
-              هم با ما در ارتباط باشید
+              </a>{" "}
+              هم با ما در ارتباط باشید.
             </p>
           </Col>
         </Row>
-        <Form
-          name="contact"
-          method="post"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-        >
-          <input type="hidden" name="bot-field" />
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>ایمیل شما</Form.Label>
-            <Form.Control type="email" placeholder="ایمیل خود را وارد کنید" />
-          </Form.Group>
-          <Form.Group controlId="message">
-            <Form.Label>درخواست شما</Form.Label>
-            <Form.Control as="textarea" rows="3" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            ارسال
-          </Button>
-        </Form>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <Form
+              name="contact"
+              method="post"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+            >
+              <input type="hidden" name="bot-field" />
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>ایمیل شما</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="ایمیل خود را وارد کنید"
+                />
+              </Form.Group>
+              <Form.Group controlId="message">
+                <Form.Label>درخواست شما</Form.Label>
+                <Form.Control as="textarea" rows="3" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                ارسال
+              </Button>
+            </Form>
+          </Col>
+        </Row>
       </Container>
     </Layout>
   </>
