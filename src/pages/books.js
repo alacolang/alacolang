@@ -51,62 +51,68 @@ const books = [
 const byId = (a, b) => a.id - b.id
 const join = arr => arr.join("، ")
 
-const Books = ({ data }) =>
-  console.log("data", data) || (
-    <>
-      <SEO title="الاکلنگ: معرفی کتاب" />
-      <Layout>
-        <Container className="books">
-          <div className="d-flex flex-column justify-content-center align-items-center">
-            <h2 className="books-title text-primary">معرفی کتاب‌</h2>
-            <div style={{ width: 400, height: 450 }}>
-              <Img
-                className="books-image"
-                fluid={
-                  find(data.images.edges, "books").node.childImageSharp.fluid
-                }
-              />
-            </div>
-            <div>
-              <p className="text-secondary">
-                در این صفحه شما با کتاب‌های مربوط به اختلال دوقطبی در کودکان و
-                نوجوانان آشنا خواهید شد.
-              </p>
-            </div>
-          </div>
-          {books.sort(byId).map(book => (
-            <a target="_blank" rel="noopener noreferrer" href={book.link}>
-              <Row className="book">
-                <Col xs={12} md={{ span: 2, offset: 3 }}>
-                  <Img
-                    className="content-image"
-                    fluid={
-                      find(data.images.edges, book.image).node.childImageSharp
-                        .fluid
-                    }
-                  />
-                </Col>
-                <Col xs={12} md={{ span: 6 }}>
-                  <li>{book.title}</li>
+const Books = ({ data }) => (
+  <>
+    <SEO title="الاکلنگ: معرفی کتاب" />
+    <Layout>
+      <Container fluid className="books">
+        <h2 className="books-title text-primary text-center">معرفی کتاب‌</h2>
+        <Row className="no-gutters">
+          <Col md={{ span: 6, offset: 3 }}>
+            <Img
+              className="books-image"
+              fluid={
+                find(data.images.edges, "books").node.childImageSharp.fluid
+              }
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p className="text-secondary text-center">
+              در این صفحه شما با کتاب‌های مربوط به اختلال دوقطبی در کودکان و
+              نوجوانان آشنا خواهید شد.
+            </p>
+          </Col>
+        </Row>
+        {books.sort(byId).map(book => (
+          <a
+            key={book.id}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={book.link}
+          >
+            <Row className="book">
+              <Col xs={12} md={{ span: 2, offset: 3 }}>
+                <Img
+                  className="content-image"
+                  fluid={
+                    find(data.images.edges, book.image).node.childImageSharp
+                      .fluid
+                  }
+                />
+              </Col>
+              <Col xs={12} md={{ span: 6 }}>
+                <li>{book.title}</li>
+                <li>
+                  {book.authors.length > 1 ? "نویسندگان" : "نویسنده"}:{" "}
+                  {join(book.authors)}
+                </li>
+                {book.translators.length > 0 && (
                   <li>
-                    {book.authors.length > 1 ? "نویسندگان" : "نویسنده"}:{" "}
-                    {join(book.authors)}
+                    {book.translators.length > 1 ? "مترجم‌ها" : "مترجم"}:{" "}
+                    {join(book.translators)}
                   </li>
-                  {book.translators.length > 0 && (
-                    <li>
-                      {book.translators.length > 1 ? "مترجم‌ها" : "مترجم"}:{" "}
-                      {join(book.translators)}
-                    </li>
-                  )}
-                  <li>ناشر: {book.publisher}</li>
-                </Col>
-              </Row>
-            </a>
-          ))}
-        </Container>
-      </Layout>
-    </>
-  )
+                )}
+                <li>ناشر: {book.publisher}</li>
+              </Col>
+            </Row>
+          </a>
+        ))}
+      </Container>
+    </Layout>
+  </>
+)
 
 export const query = graphql`
   query books {

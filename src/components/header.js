@@ -57,6 +57,7 @@ const Header = () => {
     ...data.posts.edges,
     {
       node: {
+        id: 'books',
         fields: { slug: "/books" },
         frontmatter: { title: "معرفی کتاب", tags: ["resources"] },
       },
