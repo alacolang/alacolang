@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
-import Layout from "../components/layout"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import SEO from "../components/seo"
 import Img from "gatsby-image"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const find = (edges, name) => edges.find(edge => edge.node.name === name)
 
