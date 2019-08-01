@@ -53,6 +53,16 @@ const Header = () => {
     }
   `)
 
+  const edges = [
+    ...data.posts.edges,
+    {
+      node: {
+        fields: { slug: "/books" },
+        frontmatter: { title: "معرفی کتاب", tags: ["resources"] },
+      },
+    },
+  ]
+
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/" className="d-flex align-items-center">
@@ -71,7 +81,7 @@ const Header = () => {
               id={section.title}
               key={section.title}
             >
-              {data.posts.edges
+              {edges
                 .map(({ node }) => node)
                 .filter(node =>
                   (node.frontmatter.tags || []).includes(section.tag)
