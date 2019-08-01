@@ -24,15 +24,15 @@ const Contact = ({ data }) => (
           </Col>
         </Row>
         <Row>
-          <Col  md={{span: 6, offset: 3}}>
+          <Col md={{ span: 6, offset: 3 }}>
             <p className="text-secondary">
-              شما می توانید از طریق فرم زیر با ما در ارتباط باشید. پیامتان را
-              بگذارید و من در اسرع وقت به شما پاسخ خواهم داد. در ضمن شما می
-              توانید از طریق{" "}
+              شما می توانید از طریق فرم زیر با ما در ارتباط باشید. پیام‌تان را
+              بگذارید و ما در اسرع وقت به شما پاسخ خواهیم داد. در ضمن شما
+              می‌توانید از طریق{" "}
               <a href="https://www.instagram.com/alacolang/">
                 صفحه اینستاگرام الاکلنگ
               </a>{" "}
-              هم با ما در ارتباط باشید.
+              ما را دنبال کنید.
             </p>
           </Col>
         </Row>
@@ -46,15 +46,20 @@ const Contact = ({ data }) => (
             >
               <input type="hidden" name="bot-field" />
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>ایمیل شما</Form.Label>
+                <Form.Label>
+                  <span className="text-secondary">ایمیل شما</span>
+                </Form.Label>
                 <Form.Control
+                  name="email"
                   type="email"
                   placeholder="ایمیل خود را وارد کنید"
                 />
               </Form.Group>
               <Form.Group controlId="message">
-                <Form.Label>درخواست شما</Form.Label>
-                <Form.Control as="textarea" rows="3" />
+                <Form.Label>
+                  <span className="text-secondary">پیام شما</span>
+                </Form.Label>
+                <Form.Control name="message" as="textarea" rows={3} />
               </Form.Group>
               <Button variant="primary" type="submit">
                 ارسال
