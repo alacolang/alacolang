@@ -10,4 +10,4 @@ order: 9
 
 [برای دانلود نسخه اندروید روی ایکون زیر کلیک کنید!](http://alacolang.ir/kolbeh.apk)
 
-[![](./kolbeh-logo.png)](http://alacolang.ir/kolbeh.apk)
+[![](./kolbeh.png)](http://alacolang.ir/kolbeh.apk)
