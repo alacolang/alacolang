@@ -41,10 +41,11 @@ const Contact = ({ data }) => (
             <Form
               name="contact"
               method="post"
-              netlify-honeypot="bot-field"
-              data-netlify="true"
+              // netlify-honeypot="bot-field"
+              // data-netlify="true"
+              action="https://getform.io/f/779968ae-0be2-4b49-9734-adc6cbd38c7c"
             >
-              <input type="hidden" name="bot-field" />
+              {/* <input type="hidden" name="bot-field" /> */}
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>
                   <span className="text-secondary">ایمیل شما</span>
