@@ -15,8 +15,8 @@ order: 9
 - [لینک دانلود ir.alacolang.kolbeh از کافه‌بازار](https://cafebazaar.ir/apps/ir.alacolang.kolbeh)
 
 
-در صورت تمایل برای ارتقا عملکرد اپیلیکشین می‌توانید به
- [سورس کد در Gitub](https://github.com/yassermzh/kolbeh)
+در صورت تمایل برای ارتقا عملکرد اپلیکشین می‌توانید به
+ [سورس کد در Github](https://github.com/yassermzh/kolbeh)
  و
   ایمیل منتشر‌ کننده
  [yassermzh@gmail.com](https://github.com/yassermzh)
