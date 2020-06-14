@@ -12,7 +12,7 @@ order: 9
 
 [![](./kolbeh.png)](http://alacolang.ir/kolbeh.apk)
 
-- [لینک دانلود ir.alacolang.kolbeh از کافه‌بازار](https://cafebazaar.ir/apps/ir.alacolang.kolbeh)
+- [لینک دانلود ir.alacolang.kolbeh از کافه‌بازار](https://cafebazaar.ir/app/ir.alacolang.kolbeh)
 
 
 در صورت تمایل برای ارتقا عملکرد اپلیکشین می‌توانید به
