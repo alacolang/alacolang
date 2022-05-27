@@ -11,13 +11,3 @@ order: 9
 [برای دانلود آخرین نسخه اندروید روی آیکون زیر کلیک کنید!](http://alacolang.ir/kolbeh.apk)
 
 [![](./kolbeh.png)](http://alacolang.ir/kolbeh.apk)
-
-- [لینک دانلود ir.alacolang.kolbeh از کافه‌بازار](https://cafebazaar.ir/app/ir.alacolang.kolbeh)
-
-
-در صورت تمایل برای ارتقا عملکرد اپلیکشین می‌توانید به
- [سورس کد در Github](https://github.com/yassermzh/kolbeh)
- و
-  ایمیل منتشر‌ کننده
- [yassermzh@gmail.com](https://github.com/yassermzh)
- مراجعه کنید.
