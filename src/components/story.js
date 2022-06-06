@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -199,10 +199,9 @@ const Story = ({ images }) => (
       >
         <Col md={{ span: 4, offset: 1 }}>
           {section.images.map(image => (
-            <Img
-              className="content-image"
-              fluid={find(images.edges, image).node.childImageSharp.fluid}
-            />
+            <GatsbyImage
+              image={find(images.edges, image).node.childImageSharp.gatsbyImageData}
+              className="content-image" />
           ))}
         </Col>
         <Col md={{ span: 4, offset: 1 }}>

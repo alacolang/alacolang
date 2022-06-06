@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import NavDropdown from "react-bootstrap/NavDropdown"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const sections = [
   { tag: "self", title: "نوجوانان" },
@@ -18,40 +18,37 @@ const getOrder = node =>
 const byOrder = (a, b) => getOrder(a) - getOrder(b)
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query Header {
-      site {
-        siteMetadata {
+  const data = useStaticQuery(graphql`query Header {
+  site {
+    siteMetadata {
+      title
+      description
+      author
+    }
+  }
+  logo: file(relativePath: {regex: "/.*favicon-apple.*/"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FIXED)
+    }
+  }
+  posts: allMarkdownRemark {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
           title
-          description
-          author
-        }
-      }
-      logo: file(relativePath: { regex: "/.*favicon-apple.*/" }) {
-        childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      posts: allMarkdownRemark {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              shortTitle
-              tags
-              order
-            }
-          }
+          shortTitle
+          tags
+          order
         }
       }
     }
-  `)
+  }
+}
+`)
 
   const edges = [
     ...data.posts.edges,
@@ -67,10 +64,9 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/" className="d-flex align-items-center">
-        <Img
-          fixed={data.logo.childImageSharp.fixed}
-          className="d-inline-block align-top round logo"
-        />
+        <GatsbyImage
+          image={data.logo.childImageSharp.gatsbyImageData}
+          className="d-inline-block align-top round logo" />
         <span className="text-primary font-weight-bold">الاکلنگ</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -100,7 +96,7 @@ const Header = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  )
+  );
 }
 
 export default Header

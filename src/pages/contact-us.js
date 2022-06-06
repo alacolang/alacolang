@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -17,10 +17,9 @@ const Contact = ({ data }) => (
         <h2 className="books-title text-primary text-center">ارتباط با ما</h2>
         <Row className="no-gutters">
           <Col md={{ span: 6, offset: 3 }}>
-            <Img
-              className="books-image"
-              fluid={data.image.childImageSharp.fluid}
-            />
+            <GatsbyImage
+              image={data.image.childImageSharp.gatsbyImageData}
+              className="books-image" />
           </Col>
         </Row>
         <Row>
@@ -73,16 +72,13 @@ const Contact = ({ data }) => (
   </>
 )
 
-export const query = graphql`
-  query contact {
-    image: file(relativePath: { eq: "contact-us.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const query = graphql`query contact {
+  image: file(relativePath: {eq: "contact-us.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
     }
   }
+}
 `
 
 export default Contact

@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -59,12 +59,9 @@ const Books = ({ data }) => (
         <h2 className="books-title text-primary text-center">معرفی کتاب‌</h2>
         <Row className="no-gutters">
           <Col md={{ span: 6, offset: 3 }}>
-            <Img
-              className="books-image"
-              fluid={
-                find(data.images.edges, "books").node.childImageSharp.fluid
-              }
-            />
+            <GatsbyImage
+              image={find(data.images.edges, "books").node.childImageSharp.gatsbyImageData}
+              className="books-image" />
           </Col>
         </Row>
         <Row>
@@ -84,13 +81,9 @@ const Books = ({ data }) => (
           >
             <Row className="book">
               <Col xs={12} md={{ span: 2, offset: 3 }}>
-                <Img
-                  className="content-image"
-                  fluid={
-                    find(data.images.edges, book.image).node.childImageSharp
-                      .fluid
-                  }
-                />
+                <GatsbyImage
+                  image={find(data.images.edges, book.image).node.childImageSharp.gatsbyImageData}
+                  className="content-image" />
               </Col>
               <Col xs={12} md={{ span: 6 }}>
                 <li>{book.title}</li>
@@ -114,27 +107,24 @@ const Books = ({ data }) => (
   </>
 )
 
-export const query = graphql`
-  query books {
-    site {
-      siteMetadata {
-        description
-      }
+export const query = graphql`query books {
+  site {
+    siteMetadata {
+      description
     }
-    images: allFile(filter: { relativePath: { regex: "/book/" } }) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+  }
+  images: allFile(filter: {relativePath: {regex: "/book/"}}) {
+    edges {
+      node {
+        id
+        name
+        childImageSharp {
+          gatsbyImageData(width: 400, layout: CONSTRAINED)
         }
       }
     }
   }
+}
 `
 
 export default Books

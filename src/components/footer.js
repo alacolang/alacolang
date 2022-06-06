@@ -3,23 +3,14 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query Footer {
-      linkedin: file(relativePath: { eq: "linkedin.png" }) {
-        childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       instagram: file(relativePath: { eq: "instagram.png" }) {
         childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -45,14 +36,8 @@ const Footer = () => {
             </Col>
             <Col className="d-flex justify-content-end align-items-center">
               <a href="https://www.instagram.com/alacolang/">
-                <Img
-                  fixed={data.instagram.childImageSharp.fixed}
-                  className="d-inline-block align-top "
-                />
-              </a>
-              <a href="https://www.linkedin.com/in/parisa-pedram">
-                <Img
-                  fixed={data.linkedin.childImageSharp.fixed}
+                <GatsbyImage
+                  image={data.instagram.childImageSharp.gatsbyImageData}
                   className="d-inline-block align-top "
                 />
               </a>

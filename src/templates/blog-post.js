@@ -12,7 +12,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, "data.site.siteMetadata.title")
     const siteDescription = post.excerpt
-    // const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location}>
@@ -38,36 +37,6 @@ class BlogPostTemplate extends React.Component {
             </Col>
           </Row>
         </Container>
-        {/* <hr
-          style={{
-            // marginBottom: rhythm(1),
-            marginBottom: 15,
-          }}
-        />
-        <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title}
-              </Link>
-            )}
-          </li>
-        </ul> */}
       </Layout>
     )
   }

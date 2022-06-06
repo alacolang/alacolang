@@ -34,27 +34,24 @@ const IndexPage = ({ data }) => (
   </>
 )
 
-export const query = graphql`
-  query home {
-    site {
-      siteMetadata {
-        description
-      }
+export const query = graphql`query home {
+  site {
+    siteMetadata {
+      description
     }
-    images: allFile(filter: { relativePath: { regex: "/story/" } }) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+  }
+  images: allFile(filter: {relativePath: {regex: "/story/"}}) {
+    edges {
+      node {
+        id
+        name
+        childImageSharp {
+          gatsbyImageData(width: 400, layout: CONSTRAINED)
         }
       }
     }
   }
+}
 `
 
 export default IndexPage
